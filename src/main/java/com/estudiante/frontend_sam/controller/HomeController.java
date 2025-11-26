@@ -4,11 +4,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@Controller //Indica que esta clase es un controlador de Spring MVC
+@Controller
 public class HomeController {
-    @GetMapping("/") //Define que este metodo responde a peticiones GET en la raíz de la ruta "/"
+
+    @GetMapping("/")
     public String home(Model model) {
-        model.addAttribute("mensaje", "¡Bienvenido a tu proyecto Frontend con JSP!");
+        model.addAttribute("titulo", "Sistema de Gestión");
         return "home";
     }
 }
