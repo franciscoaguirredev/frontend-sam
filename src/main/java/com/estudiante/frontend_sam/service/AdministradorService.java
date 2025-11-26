@@ -38,13 +38,23 @@ public class AdministradorService {
                 .block();
     }
 
-    //Update - Actualizar un administrador
+    //Read - Obtener administrador por ID
     public Administrador obtenerAdministradorPorId(Long id) {
         return webClient.get()
                 .uri("/api/administradores/{id}", id)
                 .retrieve()
                 .bodyToMono(Administrador.class)
                 .onErrorResume(e -> Mono.empty())
+                .block();
+    }
+
+    //Update - Actualizar un administrador
+    public Administrador actualizarAdministrador(Long id, Administrador administrador) {
+        return webClient.put()
+                .uri("/api/administradores/{id}", id)
+                .bodyValue(administrador)
+                .retrieve()
+                .bodyToMono(Administrador.class)
                 .block();
     }
 

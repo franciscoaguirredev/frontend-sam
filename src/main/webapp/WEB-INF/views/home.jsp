@@ -104,7 +104,7 @@
     </p>
 
     <div class="menu">
-        <a href="/administradores/registro" class="menu-item">
+        <a href="/administradores" class="menu-item">
             <h3>👤 Administradores</h3>
             <p>Gestionar administradores</p>
         </a>
